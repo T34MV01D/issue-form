@@ -1,0 +1,41 @@
+<style>
+        body { font-family: sans-serif; background: #f0f2f5; margin: 0; padding: 20px; overflow: hidden;}
+        #chat-container { max-width: 500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 80vh; }
+        #messages-box { flex: 1; padding: 20px; overflow-y: auto; border-bottom: 1px solid #ddd; }
+        .message { margin-bottom: 12px; padding: 8px 12px; border-radius: 15px; max-width: 75%; width: fit-content; }
+        .message.received { background: #e4e6eb; align-self: flex-start; }
+        .message.sent { background: #0084ff; color: white; margin-left: auto; align-self: flex-end; }
+        .username { font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 3px; }
+        #input-area { display: flex; padding: 10px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+        input { padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; }
+        #user-input { width: 25%; margin-right: 5px; }
+        #msg-input { flex: 1; margin-right: 5px; }
+        button { background: #0084ff; color: white; border: none; padding: 10px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #006bcc; }
+        .form { display: flex; border: double lightgray 4px; align-items: center; justify-content: center; border-radius: 25px; margin-top: 150px; width: 350px; margin-left: 560px;}
+    </style>
+<h1 style="text-align: center; transform: translateY(140px);" >Issue Form</h1>
+<div class="form">
+<center>
+<form action="https://formspree.io/f/xnpjdlwe" method="POST" autocomplete="off" autocapitalize="off">
+    <input required type="email" placeholder="your@email.here" name="email" oninvalid="this.setCustomValidity('Make sure you enter your email!')" oninput="this.setCustomValidity('')" autocomplete="off">
+    <br>
+    <input required type="text" placeholder="Describe The Bug" name="report" oninvalid="this.setCustomValidity('No bug to fix if none is given!')" oninput="this.setCustomValidity('')" autocomplete="off">
+    <br>
+    <input required type="url" placeholder="Website bug appeared? (url)" name="site" oninvalid="this.setCustomValidity('But where tho?')" oninput="this.setCustomValidity('')" autocomplete="off">
+ <br>
+    <input required type="text" placeholder="How do you replicate the bug?" name="relicate" oninvalid="this.setCustomValidity('I don't know how you did it!')" oninput="this.setCustomValidity('')" autocomplete="off">
+<br>
+    <label for="image-picker">
+    <img src="upload-icon.png" alt="Click to upload image" id="preview-target" style="cursor: pointer; width: 45px; height: 45px; object-fit: cover;">
+  </label>
+
+  <!-- The actual file input is hidden visually -->
+  <input type="file" id="image-picker" name="uploaded_image" accept="image/*" style="display:none;" name="picture">
+  <p style="font-size: 13px; color: gray; opacity: 45%;">Upload *optional*</p>
+  <button type="submit" style="width: 200px;">Submit</button>
+
+</form>
+</center>
+</div>
+<footer style="font-size: 13px; color: red; opacity: 35%; margin-top: 200px; text-align: center;">*We do not collect cookies. We hold the given data that cannot be deleted until the bug is resolved. NO information is ever sold*</footer>
